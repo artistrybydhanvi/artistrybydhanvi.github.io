@@ -1,0 +1,542 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+/* Header Section */
+header {
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+header .logo h1 {
+    font-size: 2rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+/* About Section */
+#about {
+    background: linear-gradient(135deg, #e6e6e6, #f7f7f7);
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.about-img {
+   margin-bottom: 20px;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#about p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .about-container {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .about-img {
+        margin-left: 70px;
+    }
+}
+
+/* Portfolio Section Styling */
+    #portfolio {
+        padding: 50px 20px;
+        text-align: center;
+        background-color: #121212;
+        color: #f1f1f1;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    #portfolio h2 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        color: #fff;
+    }
+
+    .portfolio-tabs {
+        margin-bottom: 30px;
+    }
+
+    .tab-btn {
+        background: #1f1f1f;
+        border: 2px solid #333;
+        padding: 10px 20px;
+        font-size: 1.2rem;
+        cursor: pointer;
+        margin: 0 10px;
+        border-radius: 50px;
+        color: #f1f1f1;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .tab-btn.active {
+        background: #333;
+        transform: scale(1.1);
+    }
+
+    .tab-btn:hover {
+        background: #444;
+        transform: scale(1.05);
+    }
+
+    /* Carousel Styling */
+    .carousel-container {
+        position: relative;
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        height: auto;
+        overflow: hidden;
+        border-radius: 20px;
+    }
+
+    .carousel-images img {
+        display: none;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        background-color: #000;
+        border-radius: 20px;
+        animation: fade-in 1s ease-in-out;
+    }
+
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    .carousel {
+        display: none;
+        position: relative;
+    }
+
+    .active-carousel {
+        display: block;
+    }
+
+    .carousel-prev,
+    .carousel-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(17, 14, 14, 0.07);
+        color:white;
+        border: none;
+        font-size: 1rem;
+        cursor: pointer;
+        padding: 10px;
+        z-index: 10;
+        border-radius: 90%;
+        transition: background-color 0.3s ease;
+    }
+
+    .carousel-prev {
+        left: 10px;
+    }
+
+    .carousel-next {
+        right: 10px;
+    }
+
+    .carousel-prev:hover,
+    .carousel-next:hover {
+        background: rgba(255, 255, 255, 0.5);
+    }
+
+/*Services */
+
+
+
+#services {
+    background-color: #fff;
+    padding: 50px;
+    text-align: center;
+}
+
+#services h2 {
+    font-size: 2.5rem;
+}
+
+.services-list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.service-item {
+    width: 30%;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.service-item:hover {
+    transform: scale(1.05);
+}
+
+.service-item h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+/* Popup Modal Styles */
+.popup-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 0;
+    border-radius: 10px;
+    text-align: center;
+    width: 90%;
+    height: 90%;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.close-btn {
+    color:white;
+    font-size: 2rem;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+#pdf-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#pdf-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    zoom: 1.2; /* Ensures the PDF appears fully zoomed */
+}
+/* Contact Section */
+#contact {
+    padding: 50px;
+    text-align: center;
+    background-color: #f7f7f7;
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+#contact p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.contact-details {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    display: inline-block;
+    text-align: left;
+}
+
+.contact-details p {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-details i {
+    color: #020202;
+    font-size: 1.2rem;
+}
+
+.contact-details a {
+    color: #020202;
+    text-decoration: none;
+}
+
+.contact-details a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Section */
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
+
+    .services-list {
+        flex-direction: column;
+    }
+
+    .service-item {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .portfolio-gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Back to Top Button */
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#backToTop:hover {
+    background-color: #333;
+}
+
+/* Responsive Navbar */
+.menu-icon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #000;
+        padding: 10px;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        z-index: 1; /* Lower z-index than the menu icon */
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    .menu-icon {
+        margin-top: 10px;
+        display: inline-block;
+        position: relative; /* Ensure it stays on top */
+        z-index: 1; /* Higher z-index to remain visible */
+        cursor: pointer; /* Adds a pointer cursor for better UX */
+    }
+
+    nav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 80vh; /* Set the height to 80% of the viewport height (adjust to fit your needs) */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white; /* Ensures the text is white for visibility */
+    overflow: hidden; /* Ensures no overflow from video or content */
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the section */
+    z-index: -1; /* Places the video behind the content */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Black overlay for better contrast */
+    z-index: 0; /* Ensures the overlay is behind the text */
+}
+
+.hero-content {
+    z-index: 2; /* Ensures the text is above the overlay and video */
+}
+
+/* Text Styling */
+.hero-content h1 {
+    font-size: 3rem; /* Adjust the size of the title */
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    max-width: 600px;
+    line-height: 1.5;
+}
+
+.hero-content .btn-primary {
+    padding: 10px 20px;
+    background-color: #000; /* Changed to black */
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.hero-content .btn-primary:hover {
+    background-color: #333; /* Darken on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem; /* Adjust title font size on smaller screens */
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .hero {
+        height: 60vh; /* Adjust height on smaller screens for better fitting */
+    }
+}
+
+/* Testimonials Section */
+#testimonials {
+    background: #f7f7f7;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#testimonials h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.testimonial-carousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial {
+    display: none;
+    font-style: italic;
+}
+
+.testimonial:first-child {
+    display: block;
+}

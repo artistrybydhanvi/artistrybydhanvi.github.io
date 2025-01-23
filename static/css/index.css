@@ -540,8 +540,45 @@ footer {
 .testimonial:first-child {
     display: block;
 }
+
+
+/* General Media Query for Small Screens */
 @media (max-width: 576px) {
-    /* Header */
+    /* Hero Section Adjustments */
+    .hero {
+        height: 70vh;
+    }
+
+    .hero-overlay {
+        background: rgba(0, 0, 0, 0.6); /* Darker overlay for better text contrast */
+    }
+
+    /* Responsive Video */
+    .video-section {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .responsive-video {
+        width: 100%;
+        height: auto; /* Maintain aspect ratio */
+        max-height: 300px; /* Set a reasonable max height */
+    }
+
+    /* Responsive PDF Viewer */
+    .pdf-section {
+        width: 100%;
+        padding: 10px;
+    }
+
+    #pdf-viewer {
+        width: 100%;
+        height: 400px; /* Adjust height for better visibility */
+        border: none;
+        overflow-y: scroll; /* Enable scrolling if needed */
+    }
+
+    /* Header Adjustments */
     header {
         flex-direction: column;
         padding: 10px;
@@ -638,15 +675,6 @@ footer {
     footer {
         font-size: 0.9rem;
         padding: 15px;
-    }
-
-    /* Hero Section */
-    .hero {
-        height: 70vh;
-    }
-
-    .hero-overlay {
-        background: rgba(0, 0, 0, 0.6); /* Darker overlay for better text contrast */
     }
 
     /* Back to Top Button */

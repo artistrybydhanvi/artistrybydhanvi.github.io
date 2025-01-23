@@ -684,3 +684,17 @@ footer {
         font-size: 1.2rem;
     }
 }
+
+@media screen and (max-width: 667px) {
+    /* Styles specific for iPhone (portrait) */
+    .responsive-video {
+        width: 100%;
+        height: auto;
+    }
+
+    #pdf-viewer {
+        width: 100%;
+        height: 400px;
+        overflow-y: scroll;
+    }
+}

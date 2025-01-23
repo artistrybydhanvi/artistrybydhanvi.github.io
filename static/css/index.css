@@ -540,3 +540,119 @@ footer {
 .testimonial:first-child {
     display: block;
 }
+@media (max-width: 576px) {
+    /* Header */
+    header {
+        flex-direction: column;
+        padding: 10px;
+        text-align: center;
+    }
+
+    header .logo h1 {
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        display: none; /* Initially hidden for toggle menu */
+        width: 100%;
+        background-color: #000;
+        text-align: center;
+    }
+
+    nav ul.active {
+        display: flex; /* Display the menu when active */
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 1rem;
+    }
+
+    .menu-icon {
+        display: block; /* Show menu icon for toggling */
+    }
+
+    /* About Section */
+    #about {
+        padding: 30px 10px;
+    }
+
+    #about h2 {
+        font-size: 2rem;
+    }
+
+    .about-img {
+        width: 200px;
+        height: 200px;
+    }
+
+    #about p {
+        font-size: 1rem;
+    }
+
+    /* Portfolio Section */
+    #portfolio h2 {
+        font-size: 2.5rem;
+    }
+
+    .portfolio-tabs .tab-btn {
+        font-size: 1rem;
+        padding: 8px 16px;
+        margin: 5px;
+    }
+
+    .carousel-container {
+        max-width: 100%;
+        border-radius: 10px;
+    }
+
+    /* Services Section */
+    .services-list {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .service-item {
+        width: 100%;
+    }
+
+    /* Contact Section */
+    #contact {
+        padding: 30px 10px;
+    }
+
+    #contact h2 {
+        font-size: 2rem;
+    }
+
+    #contact p,
+    .contact-details p {
+        font-size: 1rem;
+    }
+
+    /* Footer */
+    footer {
+        font-size: 0.9rem;
+        padding: 15px;
+    }
+
+    /* Hero Section */
+    .hero {
+        height: 70vh;
+    }
+
+    .hero-overlay {
+        background: rgba(0, 0, 0, 0.6); /* Darker overlay for better text contrast */
+    }
+
+    /* Back to Top Button */
+    #backToTop {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}

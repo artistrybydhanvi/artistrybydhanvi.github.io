@@ -32,10 +32,10 @@
 
  <!-- Hero Section -->
 <section class="hero">
-   <video autoplay muted loop playsinline class="hero-video">
-    <source src="/static/imgs/back_vid.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
+    <video autoplay muted loop class="hero-video">
+        <source src="/static/imgs/back_vid.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
     <div class="hero-overlay"></div>
     <div class="hero-content">
         <h1>Artistry by Dhanvi</h1>
@@ -228,23 +228,31 @@ Let’s create <strong>magic</strong> together and make your special moments unf
 
 <script>
     function openPopup(service) {
-        // Show the modal
         document.getElementById("popup-modal").style.display = "flex";
 
-        // Dynamically update content based on clicked service
         const pdfContainer = document.getElementById("pdf-container");
+        let pdfPath = "";
 
         if (service === 'bridal') {
-            pdfContainer.innerHTML = '<iframe src="/static/imgs/Bridal_Packages.pdf" type="application/pdf"></iframe>'; // Embed Bridal PDF
+            pdfPath = "/static/imgs/Bridal_Packages.pdf";
         } else if (service === 'destination') {
-            pdfContainer.innerHTML = '<iframe src="/static/imgs/Destination_p.pdf" type="application/pdf"></iframe>'; // Embed Hair Styling PDF
+            pdfPath = "/static/imgs/Destination_p.pdf";
         } else if (service === 'sider') {
-            pdfContainer.innerHTML = '<iframe src="/static/imgs/Siders Package- Dhanvi Nisar.pdf.pdf" type="application/pdf"></iframe>'; // Embed Photoshoot Makeup PDF
+            pdfPath = "/static/imgs/Siders Package- Dhanvi Nisar.pdf.pdf";
+        }
+
+        // iPhone Fix: Directly embed OR open in a new tab (uncomment below to enable)
+        if (navigator.userAgent.includes("iPhone")) {
+            pdfContainer.innerHTML = '<object data="' + pdfPath + '" type="application/pdf" width="100%" height="85vh"></object>';
+            
+            // Alternative: Open in a new tab (if the embedded solution still doesn't work)
+            // window.open(pdfPath, '_blank'); 
+        } else {
+            pdfContainer.innerHTML = '<iframe src="' + pdfPath + '" type="application/pdf"></iframe>';
         }
     }
 
     function closePopup() {
-        // Hide the modal
         document.getElementById("popup-modal").style.display = "none";
     }
 </script>
